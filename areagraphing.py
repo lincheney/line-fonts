@@ -4,7 +4,8 @@ WIDTH = HEIGHT / 10
 
 glyphs = []
 start = 0xE000
-for i in range(HEIGHT+1):
+glyphs.append(f'<glyph unicode="&#x{start:x};" horiz-adv-x="{WIDTH/2}" d="" />')
+for i in range(1, HEIGHT+1):
     char = start + i
     glyphs.append(f'<glyph unicode="&#x{char:x};" horiz-adv-x="{WIDTH/2}" d="M0,-{HEIGHT/2} H{WIDTH} v{i} H0 z" />')
 glyphs = '\n'.join(glyphs)
